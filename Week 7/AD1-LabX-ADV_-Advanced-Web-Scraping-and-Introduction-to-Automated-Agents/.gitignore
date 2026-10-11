@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+.ipynb_checkpoints/
+.vscode/
+
+# Environment
+.env
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# WebDriver logs
+geckodriver.log
+chromedriver.log
+
+# NOTE: data/ is intentionally NOT ignored so scraped_products.json can be
+# committed and submitted as proof of the lab result.

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+.ipynb_checkpoints/
+.vscode/
+
+# Environment
+.env
+
+# Dependencies (virtual environments)
+venv/
+env/
+.venv/
+
+# Scraped data output (if you generate it)
+data/
