@@ -398,9 +398,5 @@ venv/
 venv/
 env/
 
-# Generated Data Files
-# (ผลลัพธ์ถูก generate ใหม่ทุกครั้งที่รัน; หลักฐานเก็บเป็นภาพใน screenshots/)
-data/output_filtered_sales.csv
-data/output_updated_inventory.json
-
+# Generated Data Files (output ถูก commit เพื่อเป็นหลักฐานของ lab)
 ```
