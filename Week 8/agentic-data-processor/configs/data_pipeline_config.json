@@ -1,0 +1,88 @@
+{
+  "tasks": [
+    {
+      "name": "Load raw sales CSV",
+      "type": "load_csv",
+      "file_path": "data/input_sales.csv",
+      "output_data_key": "raw_sales"
+    },
+    {
+      "name": "Filter big sales (Amount >= 100)",
+      "type": "filter_csv",
+      "input_data_key": "raw_sales",
+      "filter_field": "Amount",
+      "operator": ">=",
+      "value": 100.0,
+      "output_data_key": "big_sales"
+    },
+    {
+      "name": "Aggregate total sales by customer",
+      "type": "transform_csv_aggregate",
+      "input_data_key": "raw_sales",
+      "group_by_field": "Customer",
+      "aggregate_field": "Amount",
+      "aggregate_type": "sum",
+      "output_data_key": "sales_by_customer"
+    },
+    {
+      "name": "Save processed sales by customer",
+      "type": "save_csv",
+      "input_data_key": "sales_by_customer",
+      "file_path": "data/processed_sales_by_customer.csv"
+    },
+    {
+      "name": "Convert sales CSV to JSON",
+      "type": "csv_to_json_conversion",
+      "input_data_key": "raw_sales",
+      "output_data_key": "sales_json"
+    },
+    {
+      "name": "Save sales data as JSON",
+      "type": "save_json",
+      "input_data_key": "sales_json",
+      "file_path": "data/sales_data.json",
+      "indent": 2
+    },
+    {
+      "name": "Load inventory JSON",
+      "type": "load_json",
+      "file_path": "data/input_inventory.json",
+      "output_data_key": "inventory"
+    },
+    {
+      "name": "Query first product name",
+      "type": "query_json_data",
+      "input_data_key": "inventory",
+      "path": "0.name",
+      "output_data_key": "first_product_name"
+    },
+    {
+      "name": "Update stock and add new product",
+      "type": "update_json_data",
+      "input_data_key": "inventory",
+      "updates": [
+        {"path": "0.stock", "value": 60, "operation": "set"},
+        {"path": "2.stock", "value": 75, "operation": "set"},
+        {
+          "path": "",
+          "operation": "add_to_list",
+          "value": {
+            "id": "PROD004",
+            "name": "Gaming Headset",
+            "category": "Audio",
+            "stock": 90,
+            "details": {"brand": "SoundBlaster", "features": ["Noise Cancelling", "RGB"]}
+          }
+        }
+      ],
+      "output_data_key": "updated_inventory"
+    },
+    {
+      "name": "Save updated inventory",
+      "type": "save_json",
+      "input_data_key": "updated_inventory",
+      "file_path": "data/updated_inventory.json",
+      "indent": 2
+    }
+  ]
+}
