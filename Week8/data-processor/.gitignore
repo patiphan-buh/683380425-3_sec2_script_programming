@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+venv/
+.ipynb_checkpoints/
+.vscode/
+
+# Environment
+.env
+
+# Pipenv
+.venv/
+
+# virtualenv
+venv/
+env/
+
+# Generated Data Files
+# (ผลลัพธ์ถูก generate ใหม่ทุกครั้งที่รัน; หลักฐานเก็บเป็นภาพใน screenshots/)
+data/output_filtered_sales.csv
+data/output_updated_inventory.json

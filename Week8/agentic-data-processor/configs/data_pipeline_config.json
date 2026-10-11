@@ -1,0 +1,33 @@
+{
+  "pipeline_name": "week8-agentic-data-pipeline",
+  "inputs": {
+    "sales_csv": "data/input_sales.csv",
+    "inventory_json": "data/input_inventory.json"
+  },
+  "outputs": {
+    "filtered_sales_csv": "data/output_filtered_sales.csv",
+    "updated_inventory_json": "data/output_updated_inventory.json",
+    "report_dir": "reports"
+  },
+  "csv_rules": {
+    "required_columns": ["OrderID", "Product", "Amount", "Price", "Customer"],
+    "min_sale_amount": 100.0
+  },
+  "json_rules": {
+    "required_keys": ["id", "name", "category", "stock", "details"],
+    "stock_updates": [
+      {"id": "PROD001", "new_stock": 60},
+      {"id": "PROD003", "new_stock": 75},
+      {"id": "PROD999", "new_stock": 10}
+    ],
+    "new_products": [
+      {
+        "id": "PROD004",
+        "name": "Gaming Headset",
+        "category": "Audio",
+        "stock": 90,
+        "details": {"brand": "SoundBlaster", "features": ["Noise Cancelling", "RGB"]}
+      }
+    ]
+  }
+}
