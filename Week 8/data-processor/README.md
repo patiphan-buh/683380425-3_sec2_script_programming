@@ -17,19 +17,6 @@ python -m venv venv
 venv\Scripts\activate.bat      # macOS/Linux: source venv/bin/activate
 python main.py
 ```
-
-## Output Evidence (Screenshots)
-
-### `data/output_filtered_sales.csv`
-กรองเฉพาะ Amount >= 100 (3 แถว) + แถว SUMMARY (Total = 1902.00, Avg Price = 237.75, Count = 3)
-
-![output_filtered_sales](screenshots/output_filtered_sales.png)
-
-### `data/output_updated_inventory.json`
-PROD001 stock 50 → 60, PROD003 stock 80 → 75, เพิ่ม PROD004 (Gaming Headset)
-
-![output_updated_inventory](screenshots/output_updated_inventory.png)
-
 ## Project Structure
 ```
 data-processor/
