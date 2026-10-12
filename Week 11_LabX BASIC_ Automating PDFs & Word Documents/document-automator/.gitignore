@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# Generated Documents (screenshots/ is kept in Git on purpose)
+documents/output_report.docx
+documents/merged_output.pdf
+documents/*_part_*.pdf
