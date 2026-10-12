@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+venv/
+.venv/
+.ipynb_checkpoints/
+.vscode/
+
+# Environment
+.env
+
+# NOTE: data/output_report.xlsx is intentionally tracked so it can be submitted.
