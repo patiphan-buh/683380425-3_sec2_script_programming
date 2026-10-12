@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.vscode/
+
+# Environment variables — DO NOT COMMIT YOUR .env FILE
+.env
+
+# Log files
+*.log
+
+# Downloaded attachments (keep the folder via .gitkeep)
+data/attachments/*
+!data/attachments/.gitkeep
