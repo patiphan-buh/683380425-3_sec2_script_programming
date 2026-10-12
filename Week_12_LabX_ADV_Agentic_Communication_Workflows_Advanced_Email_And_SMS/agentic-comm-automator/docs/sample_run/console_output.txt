@@ -1,0 +1,77 @@
+2026-10-12 04:39:14,045 - main - INFO - Loading configuration from: /home/claude/agentic-comm-automator/configs/comm_pipeline_config.json
+2026-10-12 04:39:14,045 - src.config_parser - INFO - Configuration validated.
+2026-10-12 04:39:14,045 - src.config_parser - INFO - Configuration loaded successfully from /home/claude/agentic-comm-automator/configs/comm_pipeline_config.json
+2026-10-12 04:39:14,045 - main - INFO - Initializing Communication Agent...
+2026-10-12 04:39:14,045 - src.email_tasks - INFO - MockEmailTasks initialized for agent@example.com.
+2026-10-12 04:39:14,045 - src.sms_tasks - INFO - SMSTasks initialized.
+2026-10-12 04:39:14,045 - src.communication_agent - INFO - CommunicationAgent initialized (dry_run=True, run_id=20261012-043914).
+2026-10-12 04:39:14,046 - main - INFO - Running Communication Agent workflow...
+2026-10-12 04:39:14,046 - src.communication_agent - INFO - Starting Communication Agent run...
+2026-10-12 04:39:14,046 - root - INFO - AUDIT LOG - INFO: Communication Agent started. | Task: agent_run
+2026-10-12 04:39:14,046 - src.communication_agent - INFO - ===== Executing task: 'Send Daily Sales Report Email' (type: send_email) =====
+2026-10-12 04:39:14,046 - root - INFO - AUDIT LOG - INFO: Starting task 'Send Daily Sales Report Email' | Task: send_email
+2026-10-12 04:39:14,048 - src.email_tasks - INFO - Attached file: /home/claude/agentic-comm-automator/data/reports/sales_report.pdf
+2026-10-12 04:39:14,048 - src.email_tasks - INFO - Attached file: /home/claude/agentic-comm-automator/data/reports/summary_data.xlsx
+2026-10-12 04:39:14,049 - src.email_tasks - INFO - [DRY-RUN] Email written to /home/claude/agentic-comm-automator/data/dry_run/outbox/20261012-043914/001.eml (to: team@example.com, agent@example.com)
+2026-10-12 04:39:14,049 - src.email_tasks - INFO - [DRY-RUN] Delivered to mock INBOX as UID 1.
+2026-10-12 04:39:14,049 - src.email_tasks - INFO - Email sent to 2 recipient(s). Subject: 'Daily Sales Report - 2026-10-12'.
+2026-10-12 04:39:14,049 - root - INFO - AUDIT LOG - SUCCESS: Task 'Send Daily Sales Report Email' completed successfully in 0.0s. | Task: send_email
+2026-10-12 04:39:14,049 - src.communication_agent - INFO - ===== Executing task: 'Send HTML Summary Email' (type: send_email) =====
+2026-10-12 04:39:14,049 - root - INFO - AUDIT LOG - INFO: Starting task 'Send HTML Summary Email' | Task: send_email
+2026-10-12 04:39:14,050 - src.email_tasks - INFO - Attached file: /home/claude/agentic-comm-automator/data/reports/summary_data.xlsx
+2026-10-12 04:39:14,050 - src.email_tasks - INFO - [DRY-RUN] Email written to /home/claude/agentic-comm-automator/data/dry_run/outbox/20261012-043914/002.eml (to: team@example.com, agent@example.com)
+2026-10-12 04:39:14,051 - src.email_tasks - INFO - [DRY-RUN] Delivered to mock INBOX as UID 2.
+2026-10-12 04:39:14,051 - src.email_tasks - INFO - Email sent to 2 recipient(s). Subject: '[HTML] DailySalesSummary - 2026-10-12'.
+2026-10-12 04:39:14,051 - root - INFO - AUDIT LOG - SUCCESS: Task 'Send HTML Summary Email' completed successfully in 0.0s. | Task: send_email
+2026-10-12 04:39:14,051 - src.communication_agent - INFO - ===== Executing task: 'Send Sales Alert SMS' (type: send_sms) =====
+2026-10-12 04:39:14,051 - root - INFO - AUDIT LOG - INFO: Starting task 'Send Sales Alert SMS' | Task: send_sms
+2026-10-12 04:39:14,051 - src.sms_tasks - INFO - Sending SMS to 1234567890 via gateway 1234567890@txt.att.net
+2026-10-12 04:39:14,052 - src.email_tasks - INFO - [DRY-RUN] Email written to /home/claude/agentic-comm-automator/data/dry_run/outbox/20261012-043914/003.eml (to: 1234567890@txt.att.net)
+2026-10-12 04:39:14,052 - src.email_tasks - INFO - Email sent to 1 recipient(s). Subject: ''.
+2026-10-12 04:39:14,052 - src.sms_tasks - INFO - SMS: 1 sent, 0 failed.
+2026-10-12 04:39:14,052 - root - INFO - AUDIT LOG - SUCCESS: Task 'Send Sales Alert SMS' completed successfully in 0.0s. | Task: send_sms
+2026-10-12 04:39:14,052 - src.communication_agent - INFO - ===== Executing task: 'Simulate Incoming Request Email (to self)' (type: send_email) =====
+2026-10-12 04:39:14,052 - root - INFO - AUDIT LOG - INFO: Starting task 'Simulate Incoming Request Email (to self)' | Task: send_email
+2026-10-12 04:39:14,052 - src.email_tasks - INFO - Attached file: /home/claude/agentic-comm-automator/data/reports/sales_report.pdf
+2026-10-12 04:39:14,052 - src.email_tasks - INFO - Attached file: /home/claude/agentic-comm-automator/data/reports/summary_data.xlsx
+2026-10-12 04:39:14,053 - src.email_tasks - INFO - [DRY-RUN] Email written to /home/claude/agentic-comm-automator/data/dry_run/outbox/20261012-043914/004.eml (to: agent@example.com)
+2026-10-12 04:39:14,054 - src.email_tasks - INFO - [DRY-RUN] Delivered to mock INBOX as UID 3.
+2026-10-12 04:39:14,054 - src.email_tasks - INFO - Email sent to 1 recipient(s). Subject: 'Data Request for 2026-10-12 - Urgent [run 20261012-043914]'.
+2026-10-12 04:39:14,054 - root - INFO - AUDIT LOG - SUCCESS: Task 'Simulate Incoming Request Email (to self)' completed successfully in 0.0s. | Task: send_email
+2026-10-12 04:39:14,054 - src.communication_agent - INFO - ===== Executing task: 'Process Incoming Data Requests' (type: process_inbox) =====
+2026-10-12 04:39:14,054 - root - INFO - AUDIT LOG - INFO: Starting task 'Process Incoming Data Requests' | Task: process_inbox
+2026-10-12 04:39:14,056 - src.email_tasks - INFO - [DRY-RUN] Found 1 emails matching criteria in mock 'INBOX'.
+2026-10-12 04:39:14,057 - src.communication_agent - INFO - Rule 'Save PDF attachments of requests from self' matched email UID 3.
+2026-10-12 04:39:14,057 - src.email_tasks - INFO - Downloaded attachment: /home/claude/agentic-comm-automator/data/incoming_attachments/2026-10-12_uid3_sales_report.pdf
+2026-10-12 04:39:14,057 - src.email_tasks - INFO - Skipping attachment 'summary_data.xlsx' (extension .xlsx not allowed).
+2026-10-12 04:39:14,057 - root - INFO - AUDIT LOG - SUCCESS: Rule 'Save PDF attachments of requests from self' -> download_attachments (ok) | Task: process_inbox_rule
+2026-10-12 04:39:14,058 - src.email_tasks - INFO - Marked email UID 3 as read.
+2026-10-12 04:39:14,058 - root - INFO - AUDIT LOG - SUCCESS: Rule 'Save PDF attachments of requests from self' -> mark_as_read (ok) | Task: process_inbox_rule
+2026-10-12 04:39:14,058 - src.communication_agent - INFO - Rule 'SMS alert for urgent emails' matched email UID 3.
+2026-10-12 04:39:14,058 - src.sms_tasks - INFO - Sending SMS to 1234567890 via gateway 1234567890@txt.att.net
+2026-10-12 04:39:14,059 - src.email_tasks - INFO - [DRY-RUN] Email written to /home/claude/agentic-comm-automator/data/dry_run/outbox/20261012-043914/005.eml (to: 1234567890@txt.att.net)
+2026-10-12 04:39:14,059 - src.email_tasks - INFO - Email sent to 1 recipient(s). Subject: ''.
+2026-10-12 04:39:14,059 - src.sms_tasks - INFO - SMS: 1 sent, 0 failed.
+2026-10-12 04:39:14,059 - root - INFO - AUDIT LOG - SUCCESS: Rule 'SMS alert for urgent emails' -> send_sms_alert (ok) | Task: process_inbox_rule
+2026-10-12 04:39:14,059 - src.communication_agent - INFO - Rule 'Auto-reply to new data processing requests' matched email UID 3.
+2026-10-12 04:39:14,060 - src.email_tasks - INFO - [DRY-RUN] Email written to /home/claude/agentic-comm-automator/data/dry_run/outbox/20261012-043914/006.eml (to: agent@example.com)
+2026-10-12 04:39:14,061 - src.email_tasks - INFO - [DRY-RUN] Delivered to mock INBOX as UID 4.
+2026-10-12 04:39:14,061 - src.email_tasks - INFO - Email sent to 1 recipient(s). Subject: 'Re: Data Request for 2026-10-12 - Urgent [run 20261012-043914] - Received & Processing'.
+2026-10-12 04:39:14,061 - root - INFO - AUDIT LOG - SUCCESS: Rule 'Auto-reply to new data processing requests' -> reply (ok) | Task: process_inbox_rule
+2026-10-12 04:39:14,061 - root - INFO - AUDIT LOG - INFO: Processed email UID 3: 'Data Request for 2026-10-12 - Urgent [run 20261012-043914]' | Task: process_inbox
+2026-10-12 04:39:14,062 - root - INFO - AUDIT LOG - SUCCESS: Task 'Process Incoming Data Requests' completed successfully in 0.01s. | Task: process_inbox
+2026-10-12 04:39:14,062 - root - INFO - AUDIT LOG - INFO: Communication Agent finished in 0.02 seconds. | Task: agent_run_summary
+2026-10-12 04:39:14,062 - root - INFO - AUDIT LOG - INFO: Audit report generated at reports/audit_report_comm_20261012_043914.json | Task: audit_report
+2026-10-12 04:39:14,062 - src.communication_agent - INFO - Audit report saved to: /home/claude/agentic-comm-automator/reports/audit_report_comm_20261012_043914.json
+2026-10-12 04:39:14,063 - src.communication_agent - INFO - Communication Agent finished: 5 ok, 0 failed, 0.02s.
+
+================ RUN SUMMARY ================
+  [SUCCESS] Send Daily Sales Report Email
+  [SUCCESS] Send HTML Summary Email
+  [SUCCESS] Send Sales Alert SMS
+  [SUCCESS] Simulate Incoming Request Email (to self)
+  [SUCCESS] Process Incoming Data Requests
+  Audit report: reports/audit_report_comm_20261012_043914.json
+  Dry-run emails: data/dry_run/outbox/  (open the .eml files to inspect them)
+=============================================
+

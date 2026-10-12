@@ -1,0 +1,552 @@
+{
+    "run_id": "20261012-043914",
+    "dry_run": true,
+    "started_at": "2026-10-12T04:39:14.045718",
+    "finished_at": "2026-10-12T04:39:14.062145",
+    "summary": {
+        "total_tasks": 5,
+        "SUCCESS": 5,
+        "ERROR": 0,
+        "SKIPPED": 0
+    },
+    "tasks": [
+        {
+            "name": "Send Daily Sales Report Email",
+            "type": "send_email",
+            "status": "SUCCESS",
+            "seconds": 0.0
+        },
+        {
+            "name": "Send HTML Summary Email",
+            "type": "send_email",
+            "status": "SUCCESS",
+            "seconds": 0.0
+        },
+        {
+            "name": "Send Sales Alert SMS",
+            "type": "send_sms",
+            "status": "SUCCESS",
+            "seconds": 0.0
+        },
+        {
+            "name": "Simulate Incoming Request Email (to self)",
+            "type": "send_email",
+            "status": "SUCCESS",
+            "seconds": 0.0
+        },
+        {
+            "name": "Process Incoming Data Requests",
+            "type": "process_inbox",
+            "status": "SUCCESS",
+            "seconds": 0.01
+        }
+    ],
+    "final_context_keys": [
+        "attachment_path_1",
+        "attachment_path_2",
+        "daily_report_email",
+        "html_summary_email",
+        "last_downloaded_files",
+        "last_processed_count",
+        "processed_inbox_results",
+        "report_date",
+        "report_name",
+        "run_id",
+        "sales_figure",
+        "sales_sms",
+        "simulated_email_sent",
+        "total_customers"
+    ],
+    "entries": [
+        {
+            "timestamp": "2026-10-12T04:39:14.046073",
+            "status": "INFO",
+            "task_type": "agent_run",
+            "message": "Communication Agent started.",
+            "details": {
+                "run_id": "20261012-043914",
+                "dry_run": true
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.046170",
+            "status": "INFO",
+            "task_type": "send_email",
+            "message": "Starting task 'Send Daily Sales Report Email'",
+            "details": {
+                "parameters": {
+                    "recipients": {
+                        "to": [
+                            "${TEST_RECIPIENT_EMAIL}"
+                        ],
+                        "cc": [
+                            "${SENDER_EMAIL}"
+                        ]
+                    },
+                    "subject_template": "Daily Sales Report - {report_date}",
+                    "body_template": "Dear Team,\n\nPlease find the latest sales report ({report_name}) for {report_date} attached.\nTotal sales: ${sales_figure:,.2f}. Total active customers: {total_customers}.\n\nBest regards,\nAutomated Agent",
+                    "attachments": [
+                        {
+                            "path": "{attachment_path_1}",
+                            "required": true
+                        },
+                        {
+                            "path": "{attachment_path_2}",
+                            "required": false
+                        }
+                    ],
+                    "is_html": false
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.049794",
+            "status": "SUCCESS",
+            "task_type": "send_email",
+            "message": "Task 'Send Daily Sales Report Email' completed successfully in 0.0s.",
+            "details": {
+                "output": {
+                    "recipients": {
+                        "to": [
+                            "team@example.com"
+                        ],
+                        "cc": [
+                            "agent@example.com"
+                        ]
+                    },
+                    "subject": "Daily Sales Report - 2026-10-12",
+                    "attachments": [
+                        "data/reports/sales_report.pdf",
+                        "data/reports/summary_data.xlsx"
+                    ],
+                    "skipped_attachments": [],
+                    "message_id": "<179175475404.380.9150591326450984311@localhost>"
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.049874",
+            "status": "INFO",
+            "task_type": "send_email",
+            "message": "Starting task 'Send HTML Summary Email'",
+            "details": {
+                "parameters": {
+                    "recipients": {
+                        "to": [
+                            "${TEST_RECIPIENT_EMAIL}"
+                        ],
+                        "bcc": [
+                            "${SENDER_EMAIL}"
+                        ]
+                    },
+                    "subject_template": "[HTML] {report_name} - {report_date}",
+                    "body_template": "<html><body style=\"font-family:Arial,sans-serif\"><h2>{report_name}</h2><p>Report date: <b>{report_date}</b></p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\"><tr><th>Metric</th><th>Value</th></tr><tr><td>Total sales</td><td>${sales_figure:,.2f}</td></tr><tr><td>Active customers</td><td>{total_customers}</td></tr></table><p>Attachments sent earlier: {daily_report_email[attachments]}</p><p><i>Sent by the Communication Agent (run {run_id}).</i></p></body></html>",
+                    "attachments": [
+                        {
+                            "path": "{attachment_path_2}",
+                            "only_if_context": "daily_report_email"
+                        }
+                    ],
+                    "is_html": true
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.051595",
+            "status": "SUCCESS",
+            "task_type": "send_email",
+            "message": "Task 'Send HTML Summary Email' completed successfully in 0.0s.",
+            "details": {
+                "output": {
+                    "recipients": {
+                        "to": [
+                            "team@example.com"
+                        ],
+                        "bcc": [
+                            "agent@example.com"
+                        ]
+                    },
+                    "subject": "[HTML] DailySalesSummary - 2026-10-12",
+                    "attachments": [
+                        "data/reports/summary_data.xlsx"
+                    ],
+                    "skipped_attachments": [],
+                    "message_id": "<179175475405.380.16617276925554015514@localhost>"
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.051664",
+            "status": "INFO",
+            "task_type": "send_sms",
+            "message": "Starting task 'Send Sales Alert SMS'",
+            "details": {
+                "parameters": {
+                    "phone_numbers": [
+                        "${TEST_SMS_PHONE_NUMBER}"
+                    ],
+                    "message_template": "Sales {report_date}: ${sales_figure:,.2f}, {total_customers} customers. Report emailed.",
+                    "carrier_name": "${TEST_SMS_CARRIER}"
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.052413",
+            "status": "SUCCESS",
+            "task_type": "send_sms",
+            "message": "Task 'Send Sales Alert SMS' completed successfully in 0.0s.",
+            "details": {
+                "output": {
+                    "phone_numbers": [
+                        "1234567890"
+                    ],
+                    "message": "Sales 2026-10-12: $12,345.67, 500 customers. Report emailed.",
+                    "sent_via": [
+                        "1234567890@txt.att.net"
+                    ],
+                    "failed": []
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.052480",
+            "status": "INFO",
+            "task_type": "send_email",
+            "message": "Starting task 'Simulate Incoming Request Email (to self)'",
+            "details": {
+                "parameters": {
+                    "recipients": {
+                        "to": [
+                            "${SENDER_EMAIL}"
+                        ]
+                    },
+                    "subject_template": "Data Request for {report_date} - Urgent [run {run_id}]",
+                    "body_template": "Hello Agent,\n\nWe need the latest data for {report_date}. Please process urgently. This email includes attachments.\n\nThank you,\nClient Team\n\n\nThis is an urgent request for new data processing.",
+                    "attachments": [
+                        "data/reports/sales_report.pdf",
+                        "data/reports/summary_data.xlsx"
+                    ],
+                    "is_html": false
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.054646",
+            "status": "SUCCESS",
+            "task_type": "send_email",
+            "message": "Task 'Simulate Incoming Request Email (to self)' completed successfully in 0.0s.",
+            "details": {
+                "output": {
+                    "recipients": {
+                        "to": [
+                            "agent@example.com"
+                        ]
+                    },
+                    "subject": "Data Request for 2026-10-12 - Urgent [run 20261012-043914]",
+                    "attachments": [
+                        "data/reports/sales_report.pdf",
+                        "data/reports/summary_data.xlsx"
+                    ],
+                    "skipped_attachments": [],
+                    "message_id": "<179175475405.380.5425135837425281381@localhost>"
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.054710",
+            "status": "INFO",
+            "task_type": "process_inbox",
+            "message": "Starting task 'Process Incoming Data Requests'",
+            "details": {
+                "parameters": {
+                    "mailbox": "INBOX",
+                    "search_criteria": {
+                        "status": "ALL",
+                        "from_sender": "${SENDER_EMAIL}",
+                        "subject_contains": [
+                            "Data Request",
+                            "run {run_id}"
+                        ]
+                    },
+                    "wait_for_email_seconds": 60,
+                    "poll_interval_seconds": 10,
+                    "max_emails": 10,
+                    "rules": [
+                        {
+                            "name": "Save PDF attachments of requests from self",
+                            "if": {
+                                "from_sender_contains": "${SENDER_EMAIL}",
+                                "subject_contains": "Request",
+                                "has_attachments": true
+                            },
+                            "then": {
+                                "download_attachments_to": "data/incoming_attachments",
+                                "attachment_extensions": [
+                                    ".pdf"
+                                ],
+                                "rename_template": "{report_date}_uid{uid}_{filename}",
+                                "mark_as_read": true
+                            }
+                        },
+                        {
+                            "name": "SMS alert for urgent emails",
+                            "if": {
+                                "body_contains": "urgent"
+                            },
+                            "then": {
+                                "send_sms_alert": true,
+                                "alert_phone_numbers": [
+                                    "${TEST_SMS_PHONE_NUMBER}"
+                                ],
+                                "alert_carrier": "${TEST_SMS_CARRIER}",
+                                "alert_message_template": "URGENT request from {sender_address}. Files saved: {downloaded_files}"
+                            }
+                        },
+                        {
+                            "name": "Auto-reply to new data processing requests",
+                            "if": {
+                                "body_contains": "new data processing"
+                            },
+                            "then": {
+                                "reply_with_template": "Agent received your request '{subject}' ({attachment_count} attachment(s)). We are now processing the new data. You will receive an update shortly.",
+                                "reply_subject_template": "Re: {subject} - Received & Processing"
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.057721",
+            "status": "SUCCESS",
+            "task_type": "process_inbox_rule",
+            "message": "Rule 'Save PDF attachments of requests from self' -> download_attachments (ok)",
+            "details": {
+                "uid": "3",
+                "detail": {
+                    "saved": [
+                        "data/incoming_attachments/2026-10-12_uid3_sales_report.pdf"
+                    ]
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.058491",
+            "status": "SUCCESS",
+            "task_type": "process_inbox_rule",
+            "message": "Rule 'Save PDF attachments of requests from self' -> mark_as_read (ok)",
+            "details": {
+                "uid": "3",
+                "detail": null
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.059725",
+            "status": "SUCCESS",
+            "task_type": "process_inbox_rule",
+            "message": "Rule 'SMS alert for urgent emails' -> send_sms_alert (ok)",
+            "details": {
+                "uid": "3",
+                "detail": {
+                    "message": "URGENT request from agent@example.com. Files saved: data/incoming_attachments/2026-10-12_uid3_sales_report.pdf",
+                    "sent_via": [
+                        "1234567890@txt.att.net"
+                    ]
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.061889",
+            "status": "SUCCESS",
+            "task_type": "process_inbox_rule",
+            "message": "Rule 'Auto-reply to new data processing requests' -> reply (ok)",
+            "details": {
+                "uid": "3",
+                "detail": {
+                    "to": "agent@example.com",
+                    "subject": "Re: Data Request for 2026-10-12 - Urgent [run 20261012-043914] - Received & Processing"
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.061929",
+            "status": "INFO",
+            "task_type": "process_inbox",
+            "message": "Processed email UID 3: 'Data Request for 2026-10-12 - Urgent [run 20261012-043914]'",
+            "details": {
+                "matched_rules": [
+                    "Save PDF attachments of requests from self",
+                    "SMS alert for urgent emails",
+                    "Auto-reply to new data processing requests"
+                ],
+                "actions": [
+                    {
+                        "rule": "Save PDF attachments of requests from self",
+                        "action": "download_attachments",
+                        "success": true,
+                        "detail": {
+                            "saved": [
+                                "data/incoming_attachments/2026-10-12_uid3_sales_report.pdf"
+                            ]
+                        }
+                    },
+                    {
+                        "rule": "Save PDF attachments of requests from self",
+                        "action": "mark_as_read",
+                        "success": true,
+                        "detail": null
+                    },
+                    {
+                        "rule": "SMS alert for urgent emails",
+                        "action": "send_sms_alert",
+                        "success": true,
+                        "detail": {
+                            "message": "URGENT request from agent@example.com. Files saved: data/incoming_attachments/2026-10-12_uid3_sales_report.pdf",
+                            "sent_via": [
+                                "1234567890@txt.att.net"
+                            ]
+                        }
+                    },
+                    {
+                        "rule": "Auto-reply to new data processing requests",
+                        "action": "reply",
+                        "success": true,
+                        "detail": {
+                            "to": "agent@example.com",
+                            "subject": "Re: Data Request for 2026-10-12 - Urgent [run 20261012-043914] - Received & Processing"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.061996",
+            "status": "SUCCESS",
+            "task_type": "process_inbox",
+            "message": "Task 'Process Incoming Data Requests' completed successfully in 0.01s.",
+            "details": {
+                "output": {
+                    "search": {
+                        "mailbox": "INBOX",
+                        "status": "ALL",
+                        "from_sender": "agent@example.com",
+                        "subject_contains": [
+                            "Data Request",
+                            "run 20261012-043914"
+                        ],
+                        "emails_found": 1
+                    },
+                    "processed_emails": [
+                        {
+                            "uid": "3",
+                            "sender": "agent@example.com",
+                            "subject": "Data Request for 2026-10-12 - Urgent [run 20261012-043914]",
+                            "date": "Mon, 12 Oct 2026 04:39:14 +0700",
+                            "has_attachments": true,
+                            "attachments_meta": [
+                                {
+                                    "filename": "2026-10-12_uid3_sales_report.pdf",
+                                    "original_filename": "sales_report.pdf",
+                                    "filepath": "data/incoming_attachments/2026-10-12_uid3_sales_report.pdf",
+                                    "content_type": "application/octet-stream",
+                                    "size": 882
+                                }
+                            ],
+                            "matched_rules": [
+                                "Save PDF attachments of requests from self",
+                                "SMS alert for urgent emails",
+                                "Auto-reply to new data processing requests"
+                            ],
+                            "actions": [
+                                {
+                                    "rule": "Save PDF attachments of requests from self",
+                                    "action": "download_attachments",
+                                    "success": true,
+                                    "detail": {
+                                        "saved": [
+                                            "data/incoming_attachments/2026-10-12_uid3_sales_report.pdf"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "rule": "Save PDF attachments of requests from self",
+                                    "action": "mark_as_read",
+                                    "success": true,
+                                    "detail": null
+                                },
+                                {
+                                    "rule": "SMS alert for urgent emails",
+                                    "action": "send_sms_alert",
+                                    "success": true,
+                                    "detail": {
+                                        "message": "URGENT request from agent@example.com. Files saved: data/incoming_attachments/2026-10-12_uid3_sales_report.pdf",
+                                        "sent_via": [
+                                            "1234567890@txt.att.net"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "rule": "Auto-reply to new data processing requests",
+                                    "action": "reply",
+                                    "success": true,
+                                    "detail": {
+                                        "to": "agent@example.com",
+                                        "subject": "Re: Data Request for 2026-10-12 - Urgent [run 20261012-043914] - Received & Processing"
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "fetch_errors": 0
+                }
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.062039",
+            "status": "INFO",
+            "task_type": "agent_run_summary",
+            "message": "Communication Agent finished in 0.02 seconds.",
+            "details": {
+                "tasks": [
+                    {
+                        "name": "Send Daily Sales Report Email",
+                        "type": "send_email",
+                        "status": "SUCCESS",
+                        "seconds": 0.0
+                    },
+                    {
+                        "name": "Send HTML Summary Email",
+                        "type": "send_email",
+                        "status": "SUCCESS",
+                        "seconds": 0.0
+                    },
+                    {
+                        "name": "Send Sales Alert SMS",
+                        "type": "send_sms",
+                        "status": "SUCCESS",
+                        "seconds": 0.0
+                    },
+                    {
+                        "name": "Simulate Incoming Request Email (to self)",
+                        "type": "send_email",
+                        "status": "SUCCESS",
+                        "seconds": 0.0
+                    },
+                    {
+                        "name": "Process Incoming Data Requests",
+                        "type": "process_inbox",
+                        "status": "SUCCESS",
+                        "seconds": 0.01
+                    }
+                ]
+            }
+        },
+        {
+            "timestamp": "2026-10-12T04:39:14.062108",
+            "status": "INFO",
+            "task_type": "audit_report",
+            "message": "Audit report generated at reports/audit_report_comm_20261012_043914.json",
+            "details": {}
+        }
+    ]
+}
