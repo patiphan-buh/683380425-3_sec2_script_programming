@@ -1,0 +1,166 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Contents 5 0 R
+/MediaBox [ 0 0 595.2756 841.8898 ]
+/Resources <<
+/ExtGState <<
+/gRLs0 <<
+/ca 0.25
+>>
+>>
+/Font <<
+/F1 6 0 R
+/F1-0 7 0 R
+/F2 8 0 R
+/F2-0 9 0 R
+>>
+/ProcSet [ /ImageB /ImageC /ImageI /PDF /Text ]
+>>
+/Rotate 0
+/Trans <<
+>>
+/Type /Page
+/Annots [ ]
+/Parent 2 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 1451
+>>
+stream
+q
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 780 Tm (QUARTERLY PROCESS REVIEW) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 762 Tm  T* ET
+BT /F2 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 744 Tm (Purpose:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 726 Tm (This document is the source file used to demonstrate PDF text extraction) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 708 Tm (and watermarking in the document automation agent.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 690 Tm  T* ET
+BT /F2 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 672 Tm (Highlights:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 654 Tm (- Manual document handling was reduced by automating repetitive tasks.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 636 Tm (- Reports are generated from a Word template with placeholders.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 618 Tm (- Every run of the agent writes an audit report for traceability.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 600 Tm  T* ET
+BT /F2 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 582 Tm (Conclusion:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 60 564 Tm (Automating document workflows saves time and keeps output consistent.) Tj T* ET
+ 
+
+Q
+
+q
+0.0 0.0 595.2756 841.8898 re
+W
+n
+1 0 0 1 0 0 cm
+BT
+/F1-0 12 Tf
+14.4 TL
+ET
+BT
+/F2-0 80 Tf
+96 TL
+ET
+0.8 0.1 0.1 rg
+/gRLs0 gs
+0.707107 0.707107 -0.707107 0.707107 297.6378 420.9449 cm
+BT
+1 0 0 1 -297.76 0 Tm
+(CONFIDENTIAL) Tj
+T*
+ET
+Q
+
+
+endstream
+endobj
+6 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica
+/Encoding /WinAnsiEncoding
+/Name /F1
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+9 0 obj
+<<
+/BaseFont /Helvetica-Bold
+/Encoding /WinAnsiEncoding
+/Name /F2
+/Subtype /Type1
+/Type /Font
+>>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000162 00000 n 
+0000000456 00000 n 
+0000001959 00000 n 
+0000002066 00000 n 
+0000002173 00000 n 
+0000002285 00000 n 
+trailer
+<<
+/Size 10
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+2397
+%%EOF

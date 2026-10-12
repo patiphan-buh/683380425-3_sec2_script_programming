@@ -1,0 +1,13 @@
+{
+  "documents_dir": "documents",
+  "reports_dir": "documents/reports",
+  "template": "templates/report_template.docx",
+  "tasks": [
+    {"type": "extract_pdf_text", "input": "documents/source_document.pdf", "output": "documents/extracted_pdf_text.txt"},
+    {"type": "merge_pdfs", "inputs": ["documents/dummy_doc1.pdf", "documents/dummy_doc2.pdf"], "output": "documents/merged_docs.pdf"},
+    {"type": "watermark_pdf", "input": "documents/source_document.pdf", "output": "documents/watermarked_document.pdf", "text": "CONFIDENTIAL"},
+    {"type": "generate_report", "output": "documents/generated_report.docx",
+     "data": {"title": "Document Automation Report", "author": "Week 11 ADV Lab", "summary": "This report was generated from a Word template by the document automation agent."}},
+    {"type": "extract_word_text", "input": "documents/generated_report.docx", "output": "documents/extracted_word_text.txt"}
+  ]
+}

@@ -1,0 +1,11 @@
+[Page 1]
+QUARTERLY PROCESS REVIEW
+Purpose:
+This document is the source file used to demonstrate PDF text extraction
+and watermarking in the document automation agent.
+Highlights:
+- Manual document handling was reduced by automating repetitive tasks.
+- Reports are generated from a Word template with placeholders.
+- Every run of the agent writes an audit report for traceability.
+Conclusion:
+Automating document workflows saves time and keeps output consistent.
