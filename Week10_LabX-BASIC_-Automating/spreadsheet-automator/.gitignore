@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+venv/
+.ipynb_checkpoints/
+.vscode/
+
+# Environment
+.env
+.venv/
+
+# NOTE: output_sales_report.xlsx is intentionally NOT ignored,
+# so the generated file can be submitted via GitHub.
