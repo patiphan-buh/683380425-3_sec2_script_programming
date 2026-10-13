@@ -1,0 +1,76 @@
+[
+    {
+        "id": 1,
+        "description": "อ่านเอกสาร PLAN.md และทำความเข้าใจสถาปัตยกรรม",
+        "completed": true,
+        "tags": [
+            "study",
+            "architecture",
+            "week11"
+        ],
+        "_type": "Task"
+    },
+    {
+        "id": 2,
+        "description": "ส่งงานโปรเจกต์ Task Manager ฉบับสมบูรณ์",
+        "completed": false,
+        "tags": [
+            "assignment",
+            "university"
+        ],
+        "_type": "DueDateTask",
+        "due_date": "2026-10-20"
+    },
+    {
+        "id": 3,
+        "description": "Implement ฟังก์ชัน search_tasks, filter_tasks และ sort_tasks",
+        "completed": false,
+        "tags": [
+            "coding",
+            "python",
+            "priority"
+        ],
+        "_type": "PriorityTask",
+        "priority": "High"
+    },
+    {
+        "id": 4,
+        "description": "ทบทวนการทำงานของ Data Persistence และ JSON Serialization",
+        "completed": false,
+        "tags": [
+            "review",
+            "python"
+        ],
+        "_type": "PriorityTask",
+        "priority": "Medium"
+    },
+    {
+        "id": 5,
+        "description": "เตรียมสไลด์นำเสนอโปรเจกต์",
+        "completed": false,
+        "tags": [
+            "presentation",
+            "university"
+        ],
+        "_type": "DueDateTask",
+        "due_date": "2026-10-15"
+    },
+    {
+        "id": 6,
+        "description": "เขียน Unit Test สำหรับ task_manager.py",
+        "completed": false,
+        "tags": [
+            "testing",
+            "python"
+        ],
+        "_type": "PriorityTask",
+        "priority": "Low"
+    },
+    {
+        "id": 7,
+        "description": "2",
+        "completed": false,
+        "tags": [],
+        "_type": "Task"
+    }
+]
