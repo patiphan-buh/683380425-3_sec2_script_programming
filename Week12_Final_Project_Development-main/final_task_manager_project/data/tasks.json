@@ -72,5 +72,14 @@
             "101"
         ],
         "_type": "Task"
+    },
+    {
+        "id": 8,
+        "description": "Hard Work",
+        "completed": false,
+        "tags": [
+            "project"
+        ],
+        "_type": "Task"
     }
 ]
