@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+# Virtual environments
+env/
+venv/
+.venv/
+# Notebooks / editors
+.ipynb_checkpoints/
+.vscode/
+# Environment
+.env
