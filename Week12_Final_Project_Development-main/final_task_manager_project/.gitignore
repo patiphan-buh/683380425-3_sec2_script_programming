@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.Python
+
+# Virtual environments
+env/
+venv/
+.venv/
+.env
+
+# Editors / notebooks
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# data/tasks.json is committed on purpose (pre-seeded demo data)
